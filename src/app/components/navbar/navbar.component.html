@@ -1,0 +1,46 @@
+
+<nav class="navbar-light bg-white">
+
+
+<ul class="navbar-nav ml-auto">
+    <li>
+        <div *ngIf="authService.userData as user" class="profile-thumbnail" [routerLink]="['/user-welcome']">
+            <img src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}" alt="" width="65" height="65" class="rounded-circle img-thumbnail shadow-sm">
+        </div>
+    </li>
+    <li [routerLinkActive]="['active']"><a [routerLink]="['/view-events']" routerLinkActive="router-link-active" class="nav-link" (click)="navResp()"><span class="material-icons unit">calendar_today</span></a></li>
+    <li [routerLinkActive]="['active']"><a [routerLink]="['/event-declaration']" routerLinkActive="router-link-active" class="nav-link" (click)="navResp()"><span class="material-icons unit">gavel</span></a></li>
+    <li [routerLinkActive]="['active']"><a [routerLink]="['/event-declaration-sec']" routerLinkActive="router-link-active" class="nav-link" (click)="navResp()"><span class="material-icons unit">group</span></a></li>
+    <div class="bottom">
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/inbox']" routerLinkActive="router-link-active" class="nav-link" (click)="navResp()"><span class="material-icons unit">inbox</span></a></li>
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/settings']" routerLinkActive="router-link-active" class="nav-link" (click)="navResp()"><span class="material-icons unit">tune</span></a></li>
+        <li class="logout-unit"><a data-toggle="modal" data-target="#exampleModalCenter"><span class="material-icons unit">exit_to_app</span></a></li>
+    </div>
+</ul>
+
+</nav>
+
+  
+  <!-- Modal -->
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="modal-3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="background-color: var(--bg);border-radius: 10px;border:0;">
+        <div class="modal-header" style="border: 0;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline:none;">
+            <span aria-hidden="true" style="color: var(--color-text);">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="padding-bottom: 1.5rem;">
+          <button type="button" class="btn btn-secondary div-left" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary div-right" (click)="authService.SignOut()" (click)="navResp()" data-dismiss="modal">Log Out</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+
+  

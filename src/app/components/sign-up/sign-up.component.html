@@ -1,0 +1,40 @@
+<div class="body">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-xl-9 mx-auto">
+            <div class="card card-signin flex-row my-5">
+              <div class="card-img-left d-none d-md-flex">
+                 <!-- Background image for card set in CSS! -->
+              </div>
+              <div class="card-body">
+                
+                <h3 class="display-4 text-center">Sign Up</h3>
+                <br><br>
+                <div>
+                    <div class="form-group mb-3">
+                        <input id="inputEmail" type="email" placeholder="Email address" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" #userEmail required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <input id="inputPassword" type="password" placeholder="Password" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary" #userPwd required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">Sign up</button>
+            <!-- Divider Text -->
+            <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+              <div class="border-bottom w-100 ml-5"></div>
+              <span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
+              <div class="border-bottom w-100 mr-5"></div>
+          </div>
+                      <button type="button" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm" (click)="authService.GoogleAuth()">
+                        <i class="fa fa-google mr-2"></i>
+                        Continue with Google
+                      </button>
+                    <div class="text-center w-100"><p class="text-muted font-weight-bold">Already have an account? <a routerLink="/sign-in" class="text-primary ml-2">Sign In</a></p></div>        
+                  </div>
+                
+    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
